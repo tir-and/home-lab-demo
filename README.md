@@ -80,17 +80,6 @@ Each session has a corresponding log in `/docs` covering what was built, what br
 
 **Concepts covered:** DNS query flow, how blocklists work, the difference between upstream DNS and local DNS, reading query logs for visibility.
 
-**Problem I hit:** After starting the Pi-hole container, DNS resolution broke entirely on the VM.
-
-**How I fixed it:** The Ubuntu `systemd-resolved` service was already bound to port 53, conflicting with Pi-hole. Disabled `DNSStubListener` in `/etc/systemd/resolved.conf` and restarted the service. DNS resolved correctly after that.
-
-```ini
-# /etc/systemd/resolved.conf — fix for port 53 conflict
-[Resolve]
-DNSStubListener=no
-DNS=127.0.0.1
-```
-
 **What I learned:** Ports can be occupied by the OS itself, not just other containers. Checking what's using a port (`ss -tulpn | grep :53`) should always be the first troubleshooting step for port conflict errors.
 
 ---
