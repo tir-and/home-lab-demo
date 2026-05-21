@@ -1,0 +1,13 @@
+# Pi-hole environment variables
+# ---
+# Copy this file to .env and fill in your values.
+# The .env file is listed in .gitignore and will never be committed.
+# Only this template (with placeholder values) is committed to GitHub.
+
+# Web interface admin password
+# Choose a strong password — this protects your DNS admin panel
+PIHOLE_PASSWORD=change_me_before_starting
+
+# Optional: override the IP returned for blocked domains
+# Default 0.0.0.0 is fine for most setups
+PIHOLE_VIRTUAL_IP=0.0.0.0
