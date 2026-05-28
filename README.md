@@ -72,41 +72,7 @@ home-lab/
 
 Each session has a corresponding log in `/docs` covering what was built, what broke, and what was learned.
 
-### Session 4 — Pi-hole (DNS + Ad Blocking)
-
-![Complete](https://img.shields.io/badge/status-complete-brightgreen)
-
-**What I built:** Deployed Pi-hole as a local DNS server. Configured the host VM to use Pi-hole as its DNS resolver. Set up blocklists covering ~1.2 million domains.
-
-**Concepts covered:** DNS query flow, how blocklists work, the difference between upstream DNS and local DNS, reading query logs for visibility.
-
-**What I learned:** Ports can be occupied by the OS itself, not just other containers. Checking what's using a port (`ss -tulpn | grep :53`) should always be the first troubleshooting step for port conflict errors.
-
 ---
-
-## Key Config Examples
-
-### Pi-hole — docker-compose.yml
-
-```yaml
-# configs/pihole/docker-compose.yml
-# Note: real credentials are in .env (not committed to this repo)
-version: '3'
-services:
-  pihole:
-    image: pihole/pihole:latest
-    container_name: pihole
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "8080:80"
-    environment:
-      WEBPASSWORD: ${PIHOLE_PASSWORD}
-    volumes:
-      - ./etc-pihole:/etc/pihole
-      - ./etc-dnsmasq.d:/etc/dnsmasq.d
-    restart: unless-stopped
-```
 
 > 🔒 **Credential safety:** All `.env` files containing real passwords are listed in `.gitignore` and never committed. Only template files with placeholder values are in this repository.
 
@@ -138,4 +104,4 @@ services:
 
 ---
 
-*Built as part of the Practical Self-Hosted Infrastructure Programme · Semester 1: Infrastructure Lab Core*
+*Built as part of the StationX Practical Self-Hosted Infrastructure Programme · Semester 1: Infrastructure Lab Core*
