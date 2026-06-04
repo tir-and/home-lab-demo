@@ -70,7 +70,7 @@ home-lab/
 
 ## Session Logs
 
-Each session has a corresponding log in `/docs` covering what was built, what broke, and what was learned.
+Each session has a corresponding log in `/week-X` covering what was built and what was learned.
 
 ---
 
