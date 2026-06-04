@@ -30,7 +30,7 @@ Host Machine (Laptop)
                     └── Cloudflare Tunnel (remote access)
 ```
 
-Full architecture diagram: `diagrams/architecture-v1.png`
+Full architecture diagram: `architecture-diagrams/architecture-v1.png`
 
 ---
 
