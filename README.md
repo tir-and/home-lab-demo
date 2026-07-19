@@ -38,14 +38,14 @@ Full architecture diagram: `architecture-diagrams/architecture-v1.png`
 
 | Service | Purpose | Status | Port | Notes |
 |---|---|---|---|---|
-| **Pi-hole** | DNS + ad blocking | ✅ Running | 53 / 80 | ~15k queries/day blocked |
-| **File Browser** | Private file access | ✅ Running | 8080 | Behind Nginx reverse proxy |
-| **Vaultwarden** | Password management | ✅ Running | 8081 | Local-only, not exposed externally |
+| **Pi-hole** | DNS + ad blocking | ✅ Running | 53 / 80 | ?? queries/day blocked |
+| **File Browser** | Private file access | ✅ Running | 8082 | Behind Nginx reverse proxy |
 | **Immich** | Photo backup | ✅ Running | 2283 | Multi-container (Postgres + Redis) |
-| **Uptime Kuma** | Service monitoring | ✅ Running | 3001 | Monitoring all 5 services |
-| **Nginx Proxy Manager** | Reverse proxy + HTTPS | ✅ Running | 81 (admin) | Let's Encrypt certs via Cloudflare DNS |
+| **Vaultwarden** | Password management | ✅ Running | 8083 | Local-only, not exposed externally |
+| **Uptime Kuma** | Service monitoring | ⬜ Not started | 3001 | Monitoring all 5 services |
+| **Nginx Proxy Manager** | Reverse proxy + HTTPS | ⬜ Not started | 81 (admin) | Let's Encrypt certs via Cloudflare DNS |
 | **Wazuh** | SIEM / log monitoring | 🔜 Semester 2 | — | Planned |
-| **CrowdSec** | Intrusion prevention | ⬜ Not started | — | Planned |
+| **CrowdSec** | Intrusion prevention | 🔜 Semester 2  | — | Planned |
 
 ---
 
@@ -70,7 +70,7 @@ home-lab/
 
 ## Session Logs
 
-Each session has a corresponding log in `/week-X` covering what was built and what was learned.
+Each session has a corresponding docs in `/week-X` covering what was built and what was learned.
 
 ---
 
@@ -82,11 +82,11 @@ Each session has a corresponding log in `/week-X` covering what was built and wh
 
 | Component | Detail |
 |---|---|
-| Host OS | Windows 11 / macOS |
+| Host OS | Linux / Windows 11 / macOS |
 | Hypervisor | VirtualBox 7.0 |
 | Guest OS | Ubuntu Server 24.04 LTS |
 | VM RAM | 4 GB |
-| VM Storage | 40 GB (dynamically allocated) |
+| VM Storage | 25 GB (dynamically allocated) |
 | Container runtime | Docker 26 + Docker Compose v2 |
 | Remote access | Cloudflare Tunnel (free tier) |
 
